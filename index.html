@@ -1,0 +1,734 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Arte e Decoração | Tapetes, Cortinas & Decoração Têxtil</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sand: {
+                            50: '#fdfbf7',
+                            100: '#f7f3eb',
+                            200: '#ede4d3',
+                            300: '#dfcfb4',
+                            800: '#5c4d37',
+                            900: '#382f21',
+                        },
+                        terracotta: {
+                            500: '#c86d51',
+                            600: '#b2573c',
+                        },
+                        sage: {
+                            100: '#e9ece6',
+                            600: '#738a7c',
+                            700: '#586c60',
+                        },
+                        charcoal: '#222222',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fdfbf7;
+            color: #222222;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#dfcfb4 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f7f3eb;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dfcfb4;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c86d51;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-terracotta-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full bg-sand-50/90 backdrop-blur-md z-50 border-b border-sand-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex flex-col">
+                    <span class="font-serif text-2xl sm:text-3xl font-semibold tracking-wide text-charcoal">Ana</span>
+                    <span class="text-xs uppercase tracking-[0.25em] text-terracotta-600 font-medium -mt-1">Arte & Decoração</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wider text-charcoal/80">
+                    <a href="#inicio" class="hover:text-terracotta-600 transition-colors">Início</a>
+                    <a href="#sobre" class="hover:text-terracotta-600 transition-colors">Sobre</a>
+                    <a href="#catalogo" class="hover:text-terracotta-600 transition-colors">Tapetes & Cortinas</a>
+                    <a href="#almofadas" class="hover:text-terracotta-600 transition-colors">Almofadas</a>
+                    <a href="#fabricas" class="hover:text-terracotta-600 transition-colors">Parceria com Fábricas</a>
+                    <a href="#projetos" class="hover:text-terracotta-600 transition-colors">Serviços Sob Medida</a>
+                    <a href="#valores" class="hover:text-terracotta-600 transition-colors">Tabela & Valores</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex">
+                    <a href="#orcamento" class="px-5 py-2.5 bg-charcoal text-white text-xs uppercase tracking-widest rounded-full hover:bg-terracotta-600 transition-all duration-300 shadow-sm hover:shadow">
+                        Solicitar Orçamento
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-charcoal focus:outline-none" aria-label="Abrir Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-sand-50 border-b border-sand-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block py-2 text-charcoal/90 hover:text-terracotta-600 font-medium">Início</a>
+            <a href="#sobre" class="mobile-link block py-2 text-charcoal/90 hover:text-terracotta-600 font-medium">Sobre</a>
+            <a href="#catalogo" class="mobile-link block py-2 text-charcoal/90 hover:text-terracotta-600 font-medium">Tapetes & Cortinas</a>
+            <a href="#almofadas" class="mobile-link block py-2 text-charcoal/90 hover:text-terracotta-600 font-medium">Almofadas</a>
+            <a href="#fabricas" class="mobile-link block py-2 text-charcoal/90 hover:text-terracotta-600 font-medium">Parceria com Fábricas</a>
+            <a href="#projetos" class="mobile-link block py-2 text-charcoal/90 hover:text-terracotta-600 font-medium">Serviços Sob Medida</a>
+            <a href="#valores" class="mobile-link block py-2 text-charcoal/90 hover:text-terracotta-600 font-medium">Tabela & Valores</a>
+            <a href="#orcamento" class="mobile-link block mt-4 w-full text-center py-3 bg-charcoal text-white text-xs uppercase tracking-widest rounded-full">Solicitar Orçamento</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="inicio" class="relative min-h-[85vh] flex items-center bg-sand-100 overflow-hidden py-16">
+            <div class="absolute inset-0 opacity-40 bg-pattern pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <span class="inline-block text-terracotta-600 font-semibold text-xs tracking-widest uppercase bg-sand-200 px-4 py-1.5 rounded-full">
+                            Ateliê de Tapetes, Cortinas & Artigos Têxteis
+                        </span>
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif text-charcoal leading-[1.15] font-light">
+                            Conforto e sofisticação em <span class="italic text-terracotta-600 font-normal">cada detalhe sob medida</span>.
+                        </h1>
+                        <p class="text-lg text-charcoal/70 max-w-2xl font-light leading-relaxed mx-auto lg:mx-0">
+                            Especialistas em tapetes artesanais, cortinas sob medida, persianas, almofadas e enxovais decorativos para deixar sua casa aconchegante e elegante.
+                        </p>
+                        <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#catalogo" class="px-8 py-3.5 bg-terracotta-600 text-white rounded-full text-sm tracking-wider uppercase hover:bg-terracotta-500 transition-all shadow-md text-center">
+                                Ver Produtos
+                            </a>
+                            <a href="#valores" class="px-8 py-3.5 border border-charcoal/30 text-charcoal rounded-full text-sm tracking-wider uppercase hover:bg-charcoal hover:text-white transition-all text-center">
+                                Tabela de Preços
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+                                <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80" 
+                                     alt="Cortinas e Tapetes sob medida" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.src='https://placehold.co/800x1000/ede4d3/382f21?text=Tapetes+e+Cortinas'">
+                            </div>
+                            <!-- Decorative element -->
+                            <div class="absolute -bottom-6 -left-6 w-full h-full border-2 border-terracotta-500 rounded-2xl -z-0 hidden sm:block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Section -->
+        <section id="sobre" class="py-24 bg-sand-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="relative order-2 lg:order-1">
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Cortinas Elegantes" class="rounded-xl shadow-md w-full h-64 object-cover" onerror="this.src='https://placehold.co/600x600/ede4d3/382f21?text=Cortinas'">
+                            <img src="https://images.unsplash.com/photo-1575414003591-ece8d0416c7a?auto=format&fit=crop&w=600&q=80" alt="Tapete de Alta Qualidade" class="rounded-xl shadow-md w-full h-64 object-cover mt-8" onerror="this.src='https://placehold.co/600x600/ede4d3/382f21?text=Tapetes'">
+                        </div>
+                    </div>
+                    <div class="space-y-6 order-1 lg:order-2">
+                        <span class="text-terracotta-600 font-semibold text-xs tracking-widest uppercase">Tradição & Qualidade Têxtil</span>
+                        <h2 class="text-3xl sm:text-5xl font-serif text-charcoal">Tecidos nobres, caimento perfeito e acabamento impecável</h2>
+                        <p class="text-charcoal/70 leading-relaxed font-light">
+                            Na **Ana Arte e Decoração**, transformamos ambientes através do aconchego dos tecidos. Oferecemos consultoria para escolha de tecidos, medição precisa no local e confecção artesanal de cortinas, persianas e tapetes personalizados.
+                        </p>
+                        <p class="text-charcoal/70 leading-relaxed font-light">
+                            Trabalhamos com linho puro, veludos, voils leves, fios sintéticos de alta durabilidade e tapetes antialérgicos com tramas exclusivas.
+                        </p>
+                        <div class="grid grid-cols-3 gap-6 pt-4 border-t border-sand-200">
+                            <div>
+                                <span class="block font-serif text-3xl font-bold text-terracotta-600">500+</span>
+                                <span class="text-xs text-charcoal/60 uppercase tracking-wider">Tapetes Entregues</span>
+                            </div>
+                            <div>
+                                <span class="block font-serif text-3xl font-bold text-terracotta-600">800+</span>
+                                <span class="text-xs text-charcoal/60 uppercase tracking-wider">Cortinas Instaladas</span>
+                            </div>
+                            <div>
+                                <span class="block font-serif text-3xl font-bold text-terracotta-600">100%</span>
+                                <span class="text-xs text-charcoal/60 uppercase tracking-wider">Garantia de Caimento</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalogo de Produtos Section -->
+        <section id="catalogo" class="py-24 bg-sand-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-terracotta-600 font-semibold text-xs tracking-widest uppercase">Catálogo em Destaque</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif text-charcoal">Tapetes, Cortinas e Acessórios</h2>
+                    <p class="text-charcoal/70 font-light">
+                        Modelos de pronta-entrega e opções para personalização sob medida conforme as dimensões do seu ambiente.
+                    </p>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="bg-sand-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="relative overflow-hidden aspect-square">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Cortina de Linho Wave" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/800x800/ede4d3/382f21?text=Cortina+Linho'">
+                            <span class="absolute top-4 right-4 bg-sand-50/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-charcoal">
+                                Sob Medida
+                            </span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                            <div>
+                                <span class="text-xs text-terracotta-600 uppercase font-medium tracking-wider">Cortina</span>
+                                <h3 class="text-2xl font-serif text-charcoal font-semibold mt-1">Cortina Linho Gaze Wave</h3>
+                                <p class="text-sm text-charcoal/70 mt-2 font-light">
+                                    Proporciona leveza e controle suave de iluminação. Trilho suíço invisível ou varão.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-sand-200 flex justify-between items-center">
+                                <div>
+                                    <span class="text-xs text-charcoal/50 block">A partir de</span>
+                                    <span class="text-xl font-serif font-bold text-charcoal">R$ 180,00 /m²</span>
+                                </div>
+                                <a href="#orcamento" onclick="preencherAssunto('Interesse em: Cortina Linho Gaze Wave')" class="p-3 bg-sand-200 hover:bg-terracotta-600 hover:text-white rounded-full transition-colors text-charcoal" title="Tenho interesse">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="bg-sand-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="relative overflow-hidden aspect-square">
+                            <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Tapete Geométrico Antialérgico" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/800x800/ede4d3/382f21?text=Tapete+Geometrics'">
+                            <span class="absolute top-4 right-4 bg-sand-50/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-charcoal">
+                                Pronta Entrega
+                            </span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                            <div>
+                                <span class="text-xs text-sage-700 uppercase font-medium tracking-wider">Tapete de Sala</span>
+                                <h3 class="text-2xl font-serif text-charcoal font-semibold mt-1">Tapete Orgânico Sand</h3>
+                                <p class="text-sm text-charcoal/70 mt-2 font-light">
+                                    Dimensões: 2,00m x 2,50m. Toque aveludado, antiderrapante e de fácil higienização.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-sand-200 flex justify-between items-center">
+                                <div>
+                                    <span class="text-xs text-charcoal/50 block">Valor do produto</span>
+                                    <span class="text-xl font-serif font-bold text-charcoal">R$ 1.890,00</span>
+                                </div>
+                                <a href="#orcamento" onclick="preencherAssunto('Interesse no: Tapete Orgânico Sand')" class="p-3 bg-sand-200 hover:bg-terracotta-600 hover:text-white rounded-full transition-colors text-charcoal" title="Tenho interesse">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="bg-sand-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="relative overflow-hidden aspect-square">
+                            <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Kit Almofadas e Manta" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/800x800/ede4d3/382f21?text=Kit+Almofadas'">
+                            <span class="absolute top-4 right-4 bg-terracotta-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                                Kit Decorativo
+                            </span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                            <div>
+                                <span class="text-xs text-terracotta-600 uppercase font-medium tracking-wider">Almofadas & Mantas</span>
+                                <h3 class="text-2xl font-serif text-charcoal font-semibold mt-1">Kit Almofadas Terracota & Linho</h3>
+                                <p class="text-sm text-charcoal/70 mt-2 font-light">
+                                    Conjunto com 4 almofadas 50x50cm em linho bordado + 1 manta em tricô para sofá.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-sand-200 flex justify-between items-center">
+                                <div>
+                                    <span class="text-xs text-charcoal/50 block">Valor do kit</span>
+                                    <span class="text-xl font-serif font-bold text-charcoal">R$ 520,00</span>
+                                </div>
+                                <a href="#orcamento" onclick="preencherAssunto('Interesse no: Kit Almofadas Terracota')" class="p-3 bg-sand-200 hover:bg-terracotta-600 hover:text-white rounded-full transition-colors text-charcoal" title="Tenho interesse">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nova Seção de Almofadas -->
+        <section id="almofadas" class="py-24 bg-sand-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-terracotta-600 font-semibold text-xs tracking-widest uppercase">Coleção Exclusiva</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif text-charcoal">Almofadas & Mantas Decorativas</h2>
+                    <p class="text-charcoal/70 font-light">
+                        Almofadas em tecidos nobres, veludo, linho puro e tricot artesanal com enchimento em fibra siliconada antialérgica.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Almofada 1 -->
+                    <div class="bg-sand-100 rounded-2xl overflow-hidden border border-sand-200 p-4 space-y-3 group hover:shadow-lg transition-all">
+                        <div class="aspect-square rounded-xl overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Almofada Linho Bordado" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x600/ede4d3/382f21?text=Linho+Bordado'">
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-charcoal">Almofada Linho Bordado</h4>
+                        <p class="text-xs text-charcoal/70 font-light">Tam: 50x50cm. Zíper invisível e acabamento impecável.</p>
+                        <div class="flex justify-between items-center pt-2 border-t border-sand-200">
+                            <span class="font-serif font-bold text-lg text-charcoal">R$ 95,00</span>
+                            <a href="#orcamento" onclick="preencherAssunto('Interesse na: Almofada Linho Bordado')" class="text-xs uppercase font-semibold text-terracotta-600 hover:text-terracotta-500">Pedir &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Almofada 2 -->
+                    <div class="bg-sand-100 rounded-2xl overflow-hidden border border-sand-200 p-4 space-y-3 group hover:shadow-lg transition-all">
+                        <div class="aspect-square rounded-xl overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Almofada Veludo Aveludado" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x600/ede4d3/382f21?text=Veludo+Italiano'">
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-charcoal">Almofada Veludo Italiano</h4>
+                        <p class="text-xs text-charcoal/70 font-light">Tam: 45x45cm. Toque ultra suave em tons terrosos e pastel.</p>
+                        <div class="flex justify-between items-center pt-2 border-t border-sand-200">
+                            <span class="font-serif font-bold text-lg text-charcoal">R$ 85,00</span>
+                            <a href="#orcamento" onclick="preencherAssunto('Interesse na: Almofada Veludo Italiano')" class="text-xs uppercase font-semibold text-terracotta-600 hover:text-terracotta-500">Pedir &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Almofada 3 -->
+                    <div class="bg-sand-100 rounded-2xl overflow-hidden border border-sand-200 p-4 space-y-3 group hover:shadow-lg transition-all">
+                        <div class="aspect-square rounded-xl overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Almofada Tricot Trama Larga" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x600/ede4d3/382f21?text=Tricot+Artesanal'">
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-charcoal">Almofada Tricot Artesanal</h4>
+                        <p class="text-xs text-charcoal/70 font-light">Tam: 50x30cm (Retangular). Design aconchegante e artesanal.</p>
+                        <div class="flex justify-between items-center pt-2 border-t border-sand-200">
+                            <span class="font-serif font-bold text-lg text-charcoal">R$ 110,00</span>
+                            <a href="#orcamento" onclick="preencherAssunto('Interesse na: Almofada Tricot Artesanal')" class="text-xs uppercase font-semibold text-terracotta-600 hover:text-terracotta-500">Pedir &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Almofada 4 -->
+                    <div class="bg-sand-100 rounded-2xl overflow-hidden border border-sand-200 p-4 space-y-3 group hover:shadow-lg transition-all">
+                        <div class="aspect-square rounded-xl overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Almofada Jacquard Geométrica" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x600/ede4d3/382f21?text=Jacquard+Geométrico'">
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-charcoal">Almofada Jacquard Geométrica</h4>
+                        <p class="text-xs text-charcoal/70 font-light">Tam: 45x45cm. Tecido encorpado com textura em relevo.</p>
+                        <div class="flex justify-between items-center pt-2 border-t border-sand-200">
+                            <span class="font-serif font-bold text-lg text-charcoal">R$ 90,00</span>
+                            <a href="#orcamento" onclick="preencherAssunto('Interesse na: Almofada Jacquard Geométrica')" class="text-xs uppercase font-semibold text-terracotta-600 hover:text-terracotta-500">Pedir &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Parcerias com Fábricas e Tecelagens -->
+        <section id="fabricas" class="py-24 bg-sand-100 border-t border-b border-sand-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-terracotta-600 font-semibold text-xs tracking-widest uppercase">Fornecedores & B2B</span>
+                        <h2 class="text-3xl sm:text-5xl font-serif text-charcoal">Área do Fabricante de Tecidos</h2>
+                        <p class="text-charcoal/70 font-light leading-relaxed">
+                            Seu ateliê/fábrica produz linhos, veludos, jacquards, lonas ou tramas especiais para decoração? Estamos constantemente expandindo nosso catálogo de matérias-primas nobres.
+                        </p>
+                        <ul class="space-y-3 text-sm text-charcoal/80 font-light">
+                            <li class="flex items-center"><i class="fa-solid fa-handshake text-terracotta-600 mr-3"></i> Homologação de novos fornecedores têxteis</li>
+                            <li class="flex items-center"><i class="fa-solid fa-swatchbook text-terracotta-600 mr-3"></i> Envio de amostrários e catálogos de tecidos</li>
+                            <li class="flex items-center"><i class="fa-solid fa-truck-ramp-box text-terracotta-600 mr-3"></i> Compras corporativas e rolos no atacado</li>
+                        </ul>
+                        <div class="pt-2">
+                            <a href="#orcamento" onclick="preencherAssunto('Parceria de Fábrica / Fornecimento de Tecidos')" class="inline-block px-6 py-3 bg-charcoal text-white rounded-full text-xs uppercase tracking-widest hover:bg-terracotta-600 transition-all">
+                                Cadastrar Minha Fábrica &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 bg-sand-50 p-8 sm:p-10 rounded-3xl border border-sand-200 shadow-sm space-y-6">
+                        <h3 class="text-2xl font-serif text-charcoal font-semibold">Perfil de Tecidos Procurados</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 bg-sand-100/70 rounded-xl">
+                                <h4 class="font-semibold text-sm text-charcoal mb-1"><i class="fa-solid fa-scroll text-terracotta-600 mr-2"></i>Linhos & Gazes</h4>
+                                <p class="text-xs text-charcoal/70 font-light">Linhos puros, mistos e gaze de linho em larguras de 2,80m a 3,20m para cortinas.</p>
+                            </div>
+                            <div class="p-4 bg-sand-100/70 rounded-xl">
+                                <h4 class="font-semibold text-sm text-charcoal mb-1"><i class="fa-solid fa-shield-halved text-terracotta-600 mr-2"></i>Têxteis Anti-mancha</h4>
+                                <p class="text-xs text-charcoal/70 font-light">Tecidos náuticos, aquablock e impermeáveis para estofados e almofadas.</p>
+                            </div>
+                            <div class="p-4 bg-sand-100/70 rounded-xl">
+                                <h4 class="font-semibold text-sm text-charcoal mb-1"><i class="fa-solid fa-layer-group text-terracotta-600 mr-2"></i>Jacquards & Veludos</h4>
+                                <p class="text-xs text-charcoal/70 font-light">Tecidos encorpados, adamascados e veludos para capas premium e xales.</p>
+                            </div>
+                            <div class="p-4 bg-sand-100/70 rounded-xl">
+                                <h4 class="font-semibold text-sm text-charcoal mb-1"><i class="fa-solid fa-cloud-moon text-terracotta-600 mr-2"></i>Blackouts Têxteis</h4>
+                                <p class="text-xs text-charcoal/70 font-light">Tecidos de vedação solar 100% sem PVC e telas solares rolô.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços Têxteis Section -->
+        <section id="projetos" class="py-24 bg-sand-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-terracotta-600 font-semibold text-xs tracking-widest uppercase">Soluções Completas</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif text-charcoal">Serviços Personalizados</h2>
+                    <p class="text-charcoal/70 font-light">
+                        Atendimento especializado do planejamento até a instalação final em sua residência ou empresa.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Service Box 1 -->
+                    <div class="p-8 bg-sand-100 rounded-2xl border border-sand-200 space-y-4 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-terracotta-500/10 text-terracotta-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-[#f06292] fa-ruler-combined"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-semibold text-charcoal">Confecção de Cortinas & Persianas</h3>
+                            <p class="text-charcoal/70 text-sm leading-relaxed mt-2 font-light">
+                                Fabricação sob medida com ampla variedade de tecidos (Blackout, Linho, Voil, Jacquard) e modelos (Wave, Prega Macho, Rolô e Romana).
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm text-charcoal/80">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-terracotta-600 mr-2 text-xs"></i> Medição no local com catálogo de tecidos</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-terracotta-600 mr-2 text-xs"></i> Instalação profissional de trilhos e varões</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-terracotta-600 mr-2 text-xs"></i> Opções de motorização e automação</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 border-t border-sand-200 flex justify-between items-center">
+                            <span class="text-sm font-semibold text-charcoal">Orçamento sob medida</span>
+                            <a href="#orcamento" onclick="preencherAssunto('Projeto de Cortinas sob Medida')" class="text-xs uppercase font-bold text-terracotta-600 hover:text-terracotta-500 tracking-wider">Solicitar Medição &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Service Box 2 -->
+                    <div class="p-8 bg-sand-100 rounded-2xl border border-sand-200 space-y-4 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-sage-600/10 text-sage-700 rounded-xl flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-rug"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-semibold text-charcoal">Tapetes Sob Medida e Restauro</h3>
+                            <p class="text-charcoal/70 text-sm leading-relaxed mt-2 font-light">
+                                Produção de tapetes com formatos especiais, bordas customizadas e serviços de acabamento ou limpeza profissional para tapetes nobres.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm text-charcoal/80">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-sage-700 mr-2 text-xs"></i> Tapetes recortados e orgânicos</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-sage-700 mr-2 text-xs"></i> Tratamento impermeabilizante opcional</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-sage-700 mr-2 text-xs"></i> Restauro de debrum e franjas</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 border-t border-sand-200 flex justify-between items-center">
+                            <span class="text-sm font-semibold text-charcoal">A partir de R$ 220,00 / m²</span>
+                            <a href="#orcamento" onclick="preencherAssunto('Tapete Sob Medida ou Restauro')" class="text-xs uppercase font-bold text-terracotta-600 hover:text-terracotta-500 tracking-wider">Solicitar Proposta &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabela de Serviços e Valores Section -->
+        <section id="valores" class="py-24 bg-sand-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-terracotta-600 font-semibold text-xs tracking-widest uppercase">Transparência & Valores</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif text-charcoal">Tabela de Produtos e Serviços</h2>
+                    <p class="text-charcoal/70 font-light">
+                        Consulte os valores médios de referência para confecções, produtos e serviços de instalação.
+                    </p>
+                </div>
+
+                <div class="bg-sand-50 rounded-2xl shadow-sm border border-sand-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-sand-200/60 text-charcoal text-xs uppercase tracking-wider font-semibold border-b border-sand-300">
+                                    <th class="py-4 px-6">Produto / Serviço</th>
+                                    <th class="py-4 px-6">Especificação / Detalhes</th>
+                                    <th class="py-4 px-6">Prazo de Confecção</th>
+                                    <th class="py-4 px-6 text-right">Valor de Investimento</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-sand-200 text-sm text-charcoal/80">
+                                <tr class="hover:bg-sand-100/50 transition-colors">
+                                    <td class="py-5 px-6 font-medium text-charcoal">Cortina Linho Voil (por m²)</td>
+                                    <td class="py-5 px-6 font-light">Modelo Wave com trilho suíço e barra dupla embutida.</td>
+                                    <td class="py-5 px-6 text-charcoal/60">10 a 15 dias</td>
+                                    <td class="py-5 px-6 text-right font-semibold text-charcoal">R$ 180,00 / m²</td>
+                                </tr>
+                                <tr class="hover:bg-sand-100/50 transition-colors">
+                                    <td class="py-5 px-6 font-medium text-charcoal">Cortina Blackout 100% Têxtil</td>
+                                    <td class="py-5 px-6 font-light">Bloqueio total de luz com toque macio (tecido lavável).</td>
+                                    <td class="py-5 px-6 text-charcoal/60">10 a 15 dias</td>
+                                    <td class="py-5 px-6 text-right font-semibold text-charcoal">R$ 230,00 / m²</td>
+                                </tr>
+                                <tr class="hover:bg-sand-100/50 transition-colors">
+                                    <td class="py-5 px-6 font-medium text-charcoal">Persiana Rolô Tela Solar 3%</td>
+                                    <td class="py-5 px-6 font-light">Proteção UV sem perder a visibilidade externa. Várias cores.</td>
+                                    <td class="py-5 px-6 text-charcoal/60">7 a 12 dias</td>
+                                    <td class="py-5 px-6 text-right font-semibold text-charcoal">R$ 290,00 / m²</td>
+                                </tr>
+                                <tr class="hover:bg-sand-100/50 transition-colors">
+                                    <td class="py-5 px-6 font-medium text-charcoal">Tapete Sob Medida (Pelo Curto)</td>
+                                    <td class="py-5 px-6 font-light">Fios de alta resistência, antialérgico, base antiderrapante.</td>
+                                    <td class="py-5 px-6 text-charcoal/60">12 a 18 dias</td>
+                                    <td class="py-5 px-6 text-right font-semibold text-charcoal">R$ 220,00 / m²</td>
+                                </tr>
+                                <tr class="hover:bg-sand-100/50 transition-colors">
+                                    <td class="py-5 px-6 font-medium text-charcoal">Almofada Avulsa (Linho / Veludo)</td>
+                                    <td class="py-5 px-6 font-light">Capa com zíper + refil de fibra siliconada 50x50cm.</td>
+                                    <td class="py-5 px-6 text-charcoal/60">Pronta entrega</td>
+                                    <td class="py-5 px-6 text-right font-semibold text-charcoal">R$ 85,00 a R$ 110,00</td>
+                                </tr>
+                                <tr class="hover:bg-sand-100/50 transition-colors">
+                                    <td class="py-5 px-6 font-medium text-charcoal">Kit 4 Almofadas Decorativas</td>
+                                    <td class="py-5 px-6 font-light">Tamanho 50x50cm, capa com zíper invisível e enchimento de silicone.</td>
+                                    <td class="py-5 px-6 text-charcoal/60">Pronta entrega / 5 dias</td>
+                                    <td class="py-5 px-6 text-right font-semibold text-charcoal">R$ 380,00 / kit</td>
+                                </tr>
+                                <tr class="hover:bg-sand-100/50 transition-colors">
+                                    <td class="py-5 px-6 font-medium text-charcoal">Serviço de Instalação de Cortinas</td>
+                                    <td class="py-5 px-6 font-light">Instalação completa de trilhos, varões e ajuste de barra no local.</td>
+                                    <td class="py-5 px-6 text-charcoal/60">Agendamento</td>
+                                    <td class="py-5 px-6 text-right font-semibold text-charcoal">A partir de R$ 150,00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mt-6 text-center text-xs text-charcoal/60">
+                    * Condições de pagamento: Entrada de 50% no pedido e restante na entrega/instalação. Parcelamento em até 6x no cartão.
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulário de Orçamento Section -->
+        <section id="orcamento" class="py-24 bg-sand-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-sand-100 p-8 sm:p-12 rounded-3xl border border-sand-200 shadow-sm space-y-8">
+                    <div class="text-center space-y-3">
+                        <span class="text-terracotta-600 font-semibold text-xs tracking-widest uppercase">Atendimento Personalizado</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif text-charcoal">Solicite seu Orçamento</h2>
+                        <p class="text-charcoal/70 text-sm font-light max-w-lg mx-auto">
+                            Envie as medidas aproximadas da sua janela ou cômodo para receber uma estimativa rápida.
+                        </p>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nome" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Nome Completo *</label>
+                                <input type="text" id="nome" required placeholder="Seu nome" class="w-full px-4 py-3 bg-sand-50 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracotta-500 text-sm transition-all">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">E-mail *</label>
+                                <input type="email" id="email" required placeholder="seu@email.com" class="w-full px-4 py-3 bg-sand-50 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracotta-500 text-sm transition-all">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="telefone" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Telefone / WhatsApp *</label>
+                                <input type="tel" id="telefone" required placeholder="(00) 00000-0000" class="w-full px-4 py-3 bg-sand-50 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracotta-500 text-sm transition-all">
+                            </div>
+                            <div>
+                                <label for="assunto" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Produto / Serviço *</label>
+                                <select id="assunto" required class="w-full px-4 py-3 bg-sand-50 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracotta-500 text-sm transition-all">
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="Orçamento de Cortina sob Medida">Orçamento de Cortina sob Medida</option>
+                                    <option value="Orçamento de Tapete sob Medida">Orçamento de Tapete sob Medida</option>
+                                    <option value="Persianas e Rolôs">Persianas e Rolôs</option>
+                                    <option value="Almofadas e Mantas">Almofadas e Mantas</option>
+                                    <option value="Parceria de Fábrica / Fornecimento de Tecidos">Proposta de Fábrica / Fornecedor de Tecidos</option>
+                                    <option value="Outros Serviços">Outros Serviços</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="mensagem" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Medidas, Apresentação da Fábrica ou Detalhes *</label>
+                            <textarea id="mensagem" rows="4" required placeholder="Para Clientes: Informe a largura x altura da janela ou tapete.&#10;Para Fábricas: Descreva os tipos de tecidos fornecidos, faturamento mínimo ou catalogo..." class="w-full px-4 py-3 bg-sand-50 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracotta-500 text-sm transition-all"></textarea>
+                        </div>
+                        </div>
+
+                        <div>
+                            <label for="mensagem" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Medidas Aproximadas ou Detalhes *</label>
+                            <textarea id="mensagem" rows="4" required placeholder="Informe a largura x altura da janela/parede ou o tamanho aproximado do tapete desejado..." class="w-full px-4 py-3 bg-sand-50 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracotta-500 text-sm transition-all"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-terracotta-600 text-white text-xs uppercase tracking-widest font-semibold rounded-xl hover:bg-terracotta-500 transition-all shadow-md">
+                            Enviar Solicitação de Orçamento
+                        </button>
+                    </form>
+
+                    <!-- Feedback Box (Hidden by default) -->
+                    <div id="form-feedback" class="hidden p-4 rounded-xl bg-sage-100 text-sage-700 text-center text-sm font-medium">
+                        Sua mensagem foi enviada com sucesso! Entraremos em contato para apresentar sua proposta.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-sand-900 text-sand-100 py-12 border-t border-sand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <!-- Logo & Text -->
+                <div class="text-center md:text-left">
+                    <span class="font-serif text-2xl font-semibold tracking-wide text-sand-50">Ana</span>
+                    <span class="text-xs uppercase tracking-[0.25em] text-terracotta-500 block -mt-1">Arte & Decoração</span>
+                    <p class="text-xs text-sand-300/60 mt-2">Atendimento sob medida, medições e entregas agendadas.</p>
+                </div>
+
+                <!-- Footer Navigation -->
+                <div class="flex flex-wrap justify-center space-x-6 text-xs text-sand-300">
+                    <a href="#inicio" class="hover:text-terracotta-500 transition-colors">Início</a>
+                    <a href="#sobre" class="hover:text-terracotta-500 transition-colors">Sobre</a>
+                    <a href="#catalogo" class="hover:text-terracotta-500 transition-colors">Catálogo</a>
+                    <a href="#projetos" class="hover:text-terracotta-500 transition-colors">Serviços</a>
+                    <a href="#valores" class="hover:text-terracotta-500 transition-colors">Valores</a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-sand-800 text-center text-xs text-sand-300/40">
+                <p>&copy; <span id="year"></span> Ana Arte e Decoração. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript logic -->
+    <script>
+        // Set dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Autofill subject field when clicking interest buttons
+        function preencherAssunto(texto) {
+            const selectAssunto = document.getElementById('assunto');
+            const itemExistente = Array.from(selectAssunto.options).find(opt => opt.value === texto);
+            
+            if (itemExistente) {
+                selectAssunto.value = texto;
+            } else {
+                // Se o valor não existe no select, criamos uma nova opção temporária
+                const novaOpcao = document.createElement('option');
+                novaOpcao.value = texto;
+                novaOpcao.text = texto;
+                novaOpcao.selected = true;
+                selectAssunto.add(novaOpcao);
+            }
+        }
+
+        // Form Submission Interception
+        const contactForm = document.getElementById('contact-form');
+        const formFeedback = document.getElementById('form-feedback');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulação de envio com feedback visual
+            contactForm.classList.add('opacity-50', 'pointer-events-none');
+            
+            setTimeout(() => {
+                contactForm.reset();
+                contactForm.classList.remove('opacity-50', 'pointer-events-none');
+                formFeedback.classList.remove('hidden');
+                
+                // Ocultar mensagem de sucesso após 6 segundos
+                setTimeout(() => {
+                    formFeedback.classList.add('hidden');
+                }, 6000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
+```
